@@ -1,32 +1,39 @@
-# Drivers
+# Driver Class
 
 ## Learning Goals
 
-- Learning Goal 1
-- Learning Goal 2
+- Discuss what a Driver class is in Java
 
-## Introduction
+## What is a Driver?
 
-A 1-2 sentence summary of what will be covered.
+Sometimes in Java, when we want to bring multiple classes together to
+instantiate and call actions, we will create a **driver** or **runner** class.
+A driver class is often just a class with a `main()` method so that it can be
+made runnable in Java. We can import numerous classes to instantiate and execute
+various methods to "drive" or "run" the program.
 
-## Topic 1
+In the Inheritance lesson, we used a class `Main` to demonstrate how the `Cat`
+and the `Parrot` classes were children of the `Animal` class, like so:
 
-Discuss the topic of the reading. Break into sections and sub-sections as
-appropriate to help with the reader's orientation with the material and future
-referencing.
+```java
+package com.flatiron.animal;
 
-## Topic 2
+public class Main {
+   public static void main(String[] args) {
+      Cat tom = new Cat();
+      tom.setName("Tom");
+      System.out.println("Hello! My name is " + tom.getName());
+      tom.eat();
+      tom.useLitter();
 
-Discuss the topic of the reading. Break into sections and sub-sections as
-appropriate to help with the reader's orientation with the material and future
-referencing.
+      Parrot polly = new Parrot();
+      System.out.println("I'm a parrot and my name is " + polly.getName());
+      polly.eat();
+      polly.startFlying();
+   }
+}
+```
 
-## Conclusion
-
-A short one or two paragraph summary of the contents of the lessons, recapping
-the learning goals.
-
-## Resources
-
-- [Resource Link 1](example.com)
-- [Resource Link 2](example.com)
+Notice how the only purpose of the `Main` class was to instantiate our `Cat`
+and `Parrot` instances and call on their methods. This is an example of a
+driver class.
